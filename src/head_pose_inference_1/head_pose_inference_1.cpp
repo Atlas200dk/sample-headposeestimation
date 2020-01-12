@@ -273,18 +273,24 @@ bool head_pose_inference_1::Inference(const vector<ImageData<u_int8_t>> resized_
         return false;
     }
 
-    // 由于角标进行了缩放，这里要计算缩放因子
-    // 68个点的具体计算公式不用深究原理，和模型有关
-    // 以下注释部分为模型输出的68个点的
-    float scale_x = (face_imgs[i].rectangle.rb.x - face_imgs[i].rectangle.lt.x) * 1.0 / kResizedImgWidth;
-    float scale_y = (face_imgs[i].rectangle.rb.y - face_imgs[i].rectangle.lt.y) * 1.0 / kResizedImgHeight;
+    // 基于原图的人脸框宽度
+    float box_width = face_imgs[i].rectangle.rb.x - face_imgs[i].rectangle.lt.x;
+    // 基于原图的人脸框高度
+    float box_height = face_imgs[i].rectangle.rb.y - face_imgs[i].rectangle.lt.y;
     int temp_size = 0;
+    // 人脸特征点计算方式:
+    // 基于原图x的特征点坐标 = 基于原图的人脸框左上角x的坐标+(1+模型坐标点x的输出值)/2 * 基于原图人脸框的宽度
+    // 基于原图y的特征点坐标 = 基于原图的人脸框左上角y的坐标+(1+模型坐标点y的输出值)/2 * 基于原图人脸框的高度
     while(temp_size < size)
     {
-      if(temp_size % 2 == 0) // x坐标
-        result[temp_size] = (result[temp_size] * kResizedImgHeight / 2 + kResizedImgWidth / 2) * scale_x + face_imgs[i].rectangle.lt.x;
-      else // y坐标
-        result[temp_size] = (result[temp_size] * kResizedImgHeight / 2 + kResizedImgWidth / 2) * scale_y + face_imgs[i].rectangle.lt.y;
+      if(temp_size % 2 == 0)
+        // x特征点的坐标
+        // 基于原图x的特征点坐标 = 基于原图人脸框左上角x的坐标+(1+模型坐标点x的输出值)/2 * 基于原图人脸框的宽度
+        result[temp_size] = ((result[temp_size] + 1.0) / 2) * box_width + face_imgs[i].rectangle.lt.x;
+      else 
+        // y特征点的坐标
+        // 基于原图y的特征点坐标 = 基于原图人脸框左上角y的坐标+(1+模型坐标点y的输出值)/2 * 基于原图人脸框的高度
+        result[temp_size] = ((result[temp_size] + 1.0) / 2) * box_height + face_imgs[i].rectangle.lt.y;
       temp_size++;
     }
   
