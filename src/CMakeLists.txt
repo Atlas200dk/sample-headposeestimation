@@ -46,7 +46,7 @@ if(type STREQUAL host)
     endif()
 
     # add host lib path
-    link_directories($ENV{NPU_HOST_LIB} $ENV{NPU_DEVICE_LIB} $ENV{HOME}/ascend_ddk/host/lib $ENV{HOME}/ascend_ddk/device/lib /home/HwHiAiUser/HIAI_PROJECTS/ascend_lib )
+    link_directories($ENV{NPU_HOST_LIB} $ENV{HOME}/ascend_ddk/host/lib $ENV{HOME}/ascend_ddk/device/lib /home/HwHiAiUser/HIAI_PROJECTS/ascend_lib )
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
     add_executable(main main.cpp)
@@ -65,7 +65,7 @@ else()
     add_compile_options(-DCPU_ONLY)
 
     # add device lib path
-    link_directories($ENV{HOME}/ascend_ddk/device/lib /home/HwHiAiUser/HIAI_PROJECTS/ascend_lib $ENV{NPU_DEVICE_LIB})
+    link_directories($ENV{HOME}/ascend_ddk/device/lib /home/HwHiAiUser/HIAI_PROJECTS/ascend_lib $ENV{NPU_DEV_LIB})
 
     add_library(Device SHARED face_detection_inference_1/face_detection_inference_1.cpp head_pose_inference_1/head_pose_inference_1.cpp)
 
