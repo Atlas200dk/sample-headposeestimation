@@ -1,3 +1,5 @@
+中文|[English](Readme_EN.md)
+
 # 头部姿势估计<a name="ZH-CN_TOPIC_0228461773"></a>
 
 开发者可以将本application部署至Atlas 200DK上实现对摄像头数据的实时采集、并对视频中的头部姿势进行预测的功能。
