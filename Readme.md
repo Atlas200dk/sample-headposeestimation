@@ -91,7 +91,7 @@
     >![](public_sys-resources/icon-notice.gif) **须知：**   
     >首次编译工程时，**Build \> Build**为灰色不可点击状态。需要点击**Build \> Edit Build Configuration**，配置编译参数后再进行编译。  
 
-5.  启动Presenter Server。<a name="zh-cn_topic_0219099583_fig93931954162719"></a>
+5.  启动Presenter Server。<a name="zh-cn_topic_0219099583_fig93931954162222"></a>
 
     打开Mind Studio工具的Terminal，在应用程序代码存放路径下，执行如下命令在后台启动Head Pose Estimation应用的Presenter Server主程序。如[图 启动PresenterServer](#zh-cn_topic_0219099583_fig423515251067)所示。
 
@@ -146,7 +146,7 @@
 
     ![](figures/zh-cn_image_0219102308.gif)
 
-2.  使用启动Presenter Server服务时提示的URL登录 Presenter Server 网站，详细可参考[启动Presenter Server](#zh-cn_topic_0219099583.md#li499911453439)。
+2.  使用启动Presenter Server服务时提示的URL登录 Presenter Server 网站，详细可参考[启动Presenter Server](#zh-cn_topic_0219099583_fig93931954162222)。
 
     等待Presenter Agent传输数据给服务端，单击“Refresh“刷新，当有数据时相应的Channel 的Status变成绿色，如[图10](#zh-cn_topic_0219099583_fig113691556202312)所示。
 
