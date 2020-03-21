@@ -23,7 +23,7 @@ You can use either of the following methods:
     >-   The quick deployment script can be used to deploy multiple samples rapidly. Select  **headposeestimation**.  
     >-   The quick deployment script automatically completes code download, model conversion, and environment variable configuration. To learn about the detailed deployment process, select the common deployment mode. Go to  **[2. Common deployment](#li3208251440)**.  
 
-2.  <a name="li3208251440"></a>Common deployment: visit  [https://gitee.com/Atlas200DK/sample-READEME/tree/master/sample-headposeestimation](https://gitee.com/Atlas200DK/sample-READEME/tree/master/sample-headposeestimation).
+2.  <a name="li3208251440"></a>Common deployment: visit  [https://gitee.com/Atlas200DK/sample-README/tree/master/sample-headposeestimation](https://gitee.com/Atlas200DK/sample-README/tree/master/sample-headposeestimation).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >-   In this deployment mode, you need to manually download code, convert models, and configure environment variables. After that, you will have a better understanding of the process.  
@@ -91,7 +91,7 @@ You can use either of the following methods:
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
     >When you build a project for the first time,  **Build \> Build**  is unavailable. You need to choose  **Build \> Edit Build Configuration**  to set parameters before the build.  
 
-5.  Start Presenter Server.
+5.  Start Presenter Server.<a name="en-us_topic_0219099583_fig93931954162222"></a> 
 
     Open the  **Terminal**  tab page on Mind Studio. By default, under the code storage path, run the following command to start the Presenter Server program of the head pose estimation application on the server, as shown in  [Figure 4](#en-us_topic_0219099583_fig423515251067).
 
@@ -146,7 +146,7 @@ You can use either of the following methods:
 
     ![](figures/en-us_image_0219102308.gif)
 
-2.  Use the URL displayed upon the start of the Presenter Server service to log in to Presenter Server. For details, see  [Start Presenter Server](en-us_topic_0219099583.md#li499911453439).
+2.  Use the URL displayed upon the start of the Presenter Server service to log in to Presenter Server. For details, see  [Start Presenter Server](#en-us_topic_0219099583_fig93931954162222).
 
     Wait for Presenter Agent to transmit data to the server. Click  **Refresh**. When there is data, the icon in the  **Status**  column for the corresponding channel changes to green, as shown in  [Figure 10](#en-us_topic_0219099583_fig113691556202312).
 
